@@ -21,6 +21,8 @@
 		6FBBD0A825F3252B002453F9 /* AnySyncUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBBD0A725F3252B002453F9 /* AnySyncUITests.swift */; };
 		6FBBD0C225F32CB4002453F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FBBD0C125F32CB4002453F9 /* GoogleService-Info.plist */; };
 		6FBBD0FD25F333FE002453F9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBBD0FC25F333FE002453F9 /* HomeView.swift */; };
+		6FBBD10725F33418002453F9 /* PlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBBD10625F33418002453F9 /* PlaceHolder.swift */; };
+		6FBBD12F25F338B9002453F9 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBBD12E25F338B9002453F9 /* UIButton.swift */; };
 		7A38C96369CFDA80777550B8 /* Pods_AnySync_AnySyncUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF46A8A25FB38D3E13D3240 /* Pods_AnySync_AnySyncUITests.framework */; };
 		86A7A60405A0E4B81B43CDBF /* Pods_AnySync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51CE42628C70822A0BACF19 /* Pods_AnySync.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +66,8 @@
 		6FBBD0A925F3252B002453F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FBBD0C125F32CB4002453F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6FBBD0FC25F333FE002453F9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		6FBBD10625F33418002453F9 /* PlaceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolder.swift; sourceTree = "<group>"; };
+		6FBBD12E25F338B9002453F9 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		709C1AE61F6D8284862E8D94 /* Pods-AnySync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnySync.release.xcconfig"; path = "Target Support Files/Pods-AnySync/Pods-AnySync.release.xcconfig"; sourceTree = "<group>"; };
 		77CFDF79FD65294316C05576 /* Pods-AnySyncTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnySyncTests.debug.xcconfig"; path = "Target Support Files/Pods-AnySyncTests/Pods-AnySyncTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8821EB2ECB89D8C98C960938 /* Pods-AnySyncTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnySyncTests.release.xcconfig"; path = "Target Support Files/Pods-AnySyncTests/Pods-AnySyncTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 		6FBBD08425F32528002453F9 /* AnySync */ = {
 			isa = PBXGroup;
 			children = (
+				6FBBD12D25F338A2002453F9 /* Utilities */,
 				6FBBD0F025F33082002453F9 /* Models */,
 				6FBBD0EF25F33070002453F9 /* ViewModels */,
 				6FBBD0EC25F33024002453F9 /* Views */,
@@ -198,6 +203,14 @@
 				0AE3144C25F352AA0061150F /* Press.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		6FBBD12D25F338A2002453F9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6FBBD12E25F338B9002453F9 /* UIButton.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		768B64163351C0DCB1C13FF7 /* Pods */ = {
@@ -466,6 +479,7 @@
 				0AE3144D25F352AA0061150F /* Press.swift in Sources */,
 				6FBBD08625F32528002453F9 /* AppDelegate.swift in Sources */,
 				6FBBD08825F32528002453F9 /* SceneDelegate.swift in Sources */,
+				6FBBD12F25F338B9002453F9 /* UIButton.swift in Sources */,
 				6FBBD0FD25F333FE002453F9 /* HomeView.swift in Sources */,
 				6FBBD08A25F32528002453F9 /* ContentView.swift in Sources */,
 				0AE3143A25F337510061150F /* HomeRowView.swift in Sources */,
