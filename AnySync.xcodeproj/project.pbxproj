@@ -70,7 +70,7 @@
 		6FBBD0C125F32CB4002453F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6FBBD0FC25F333FE002453F9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		6FBBD12E25F338B9002453F9 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
-		6FBBD15125F3B3B6002453F9 /* tempfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempfile.swift; sourceTree = "<group>"; };
+		6FBBD15125F3B3B6002453F9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		6FBBD16E25F3CB8D002453F9 /* AnySync.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AnySync.entitlements; sourceTree = "<group>"; };
 		709C1AE61F6D8284862E8D94 /* Pods-AnySync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnySync.release.xcconfig"; path = "Target Support Files/Pods-AnySync/Pods-AnySync.release.xcconfig"; sourceTree = "<group>"; };
 		77CFDF79FD65294316C05576 /* Pods-AnySyncTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnySyncTests.debug.xcconfig"; path = "Target Support Files/Pods-AnySyncTests/Pods-AnySyncTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -224,7 +224,7 @@
 		6FBBD15025F3B3A5002453F9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				6FBBD15125F3B3B6002453F9 /* tempfile.swift */,
+				6FBBD15125F3B3B6002453F9 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
