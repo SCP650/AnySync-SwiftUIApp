@@ -23,7 +23,7 @@
 		6FBBD0FD25F333FE002453F9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBBD0FC25F333FE002453F9 /* HomeView.swift */; };
 		6FBBD10725F33418002453F9 /* PlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBBD10625F33418002453F9 /* PlaceHolder.swift */; };
 		6FBBD12F25F338B9002453F9 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBBD12E25F338B9002453F9 /* UIButton.swift */; };
-		6FBBD15225F3B3B6002453F9 /* tempfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBBD15125F3B3B6002453F9 /* tempfile.swift */; };
+		6FBBD13A25F33C65002453F9 /* tempfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBBD13925F33C65002453F9 /* tempfile.swift */; };
 		7A38C96369CFDA80777550B8 /* Pods_AnySync_AnySyncUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF46A8A25FB38D3E13D3240 /* Pods_AnySync_AnySyncUITests.framework */; };
 		86A7A60405A0E4B81B43CDBF /* Pods_AnySync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51CE42628C70822A0BACF19 /* Pods_AnySync.framework */; };
 /* End PBXBuildFile section */
@@ -69,8 +69,7 @@
 		6FBBD0FC25F333FE002453F9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		6FBBD10625F33418002453F9 /* PlaceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolder.swift; sourceTree = "<group>"; };
 		6FBBD12E25F338B9002453F9 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
-		6FBBD15125F3B3B6002453F9 /* tempfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempfile.swift; sourceTree = "<group>"; };
-		6FBBD16E25F3CB8D002453F9 /* AnySync.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AnySync.entitlements; sourceTree = "<group>"; };
+		6FBBD13925F33C65002453F9 /* tempfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = tempfile.swift; path = AnySync/Utilities/tempfile.swift; sourceTree = SOURCE_ROOT; };
 		709C1AE61F6D8284862E8D94 /* Pods-AnySync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnySync.release.xcconfig"; path = "Target Support Files/Pods-AnySync/Pods-AnySync.release.xcconfig"; sourceTree = "<group>"; };
 		77CFDF79FD65294316C05576 /* Pods-AnySyncTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnySyncTests.debug.xcconfig"; path = "Target Support Files/Pods-AnySyncTests/Pods-AnySyncTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8821EB2ECB89D8C98C960938 /* Pods-AnySyncTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnySyncTests.release.xcconfig"; path = "Target Support Files/Pods-AnySyncTests/Pods-AnySyncTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,10 +132,9 @@
 		6FBBD08425F32528002453F9 /* AnySync */ = {
 			isa = PBXGroup;
 			children = (
-				6FBBD16E25F3CB8D002453F9 /* AnySync.entitlements */,
-				6FBBD15025F3B3A5002453F9 /* ViewModels */,
 				6FBBD12D25F338A2002453F9 /* Utilities */,
 				6FBBD0F025F33082002453F9 /* Models */,
+				6FBBD0EF25F33070002453F9 /* ViewModels */,
 				6FBBD0EC25F33024002453F9 /* Views */,
 				6FBBD08525F32528002453F9 /* AppDelegate.swift */,
 				6FBBD08725F32528002453F9 /* SceneDelegate.swift */,
@@ -199,13 +197,6 @@
 				6FBBD13925F33C65002453F9 /* tempfile.swift */,
 			);
 			path = ViewModels;
-		}
-		6FBBD0EE25F33032002453F9 /* AddView */ = {
-			isa = PBXGroup;
-			children = (
-				6FBBD0F725F3320D002453F9 /* AddView.swift */,
-			);
-			path = AddView;
 			sourceTree = "<group>";
 		};
 		6FBBD0F025F33082002453F9 /* Models */ = {
@@ -223,14 +214,6 @@
 				6FBBD12E25F338B9002453F9 /* UIButton.swift */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		6FBBD15025F3B3A5002453F9 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				6FBBD15125F3B3B6002453F9 /* tempfile.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		768B64163351C0DCB1C13FF7 /* Pods */ = {
@@ -672,7 +655,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = AnySync/AnySync.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AnySync/Preview Content\"";
 				DEVELOPMENT_TEAM = M4DH5GPT3W;
@@ -682,7 +664,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yukaiyang.anysync;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yukaiyang.anysync.AnySync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -695,7 +677,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = AnySync/AnySync.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AnySync/Preview Content\"";
 				DEVELOPMENT_TEAM = M4DH5GPT3W;
@@ -705,7 +686,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yukaiyang.anysync;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yukaiyang.anysync.AnySync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
