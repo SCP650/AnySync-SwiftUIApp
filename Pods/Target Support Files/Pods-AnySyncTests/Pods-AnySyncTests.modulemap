@@ -1,0 +1,6 @@
+framework module Pods_AnySyncTests {
+  umbrella header "Pods-AnySyncTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
