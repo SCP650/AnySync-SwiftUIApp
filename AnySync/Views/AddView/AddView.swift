@@ -2,7 +2,7 @@
 //  AddView.swift
 //  AnySync
 //
-//  Created by Atlas on 3/5/21.
+//  Created by Kevin Wang on 3/6/21.
 //
 
 import SwiftUI
@@ -42,5 +42,6 @@ struct AddView: View {
 struct AddView_Previews: PreviewProvider {
     static var previews: some View {
         AddView()
+            .preferredColorScheme(.dark)
     }
 }
