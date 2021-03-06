@@ -13,7 +13,7 @@ import FirebaseMessaging
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
-    let gcmMessageIDKey = "gcm.message_id"
+    let gcmMessageIDKey = "gcm.Message_ID"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // [START set_messaging_delegate]
         Messaging.messaging().delegate = self
+    
         // [END set_messaging_delegate]
         
         // Register for remote notifications. This shows a permission dialog on first run, to
@@ -123,7 +124,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     print(userInfo)
 
     // Change this to your preferred presentation option
-    completionHandler([[.alert, .sound]])
+    completionHandler([[.banner, .list, .sound]])
   }
 
   func userNotificationCenter(_ center: UNUserNotificationCenter,
