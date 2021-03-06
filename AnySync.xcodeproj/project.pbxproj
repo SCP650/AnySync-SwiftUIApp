@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A90EBCF25F41F6000E2F253 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90EBCE25F41F6000E2F253 /* AddView.swift */; };
 		0A90EBD425F41F9600E2F253 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90EBD325F41F9600E2F253 /* Subscriber.swift */; };
+		0A90ECB125F449CC00E2F253 /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90ECB025F449CC00E2F253 /* AddViewModel.swift */; };
 		0AE3143A25F337510061150F /* HomeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE3143925F337510061150F /* HomeRowView.swift */; };
 		0AE3143F25F34B0F0061150F /* SyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE3143E25F34B0F0061150F /* SyncButton.swift */; };
 		0AE3144D25F352AA0061150F /* Press.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE3144C25F352AA0061150F /* Press.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		0A90EBCE25F41F6000E2F253 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		0A90EBD325F41F9600E2F253 /* Subscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
+		0A90ECB025F449CC00E2F253 /* AddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
 		0AE3143925F337510061150F /* HomeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRowView.swift; sourceTree = "<group>"; };
 		0AE3143E25F34B0F0061150F /* SyncButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SyncButton.swift; path = AnySync/Models/SyncButton.swift; sourceTree = SOURCE_ROOT; };
 		0AE3144C25F352AA0061150F /* Press.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Press.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				6FBBD15125F3B3B6002453F9 /* HomeViewModel.swift */,
+				0A90ECB025F449CC00E2F253 /* AddViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A90ECB125F449CC00E2F253 /* AddViewModel.swift in Sources */,
 				0AE3143F25F34B0F0061150F /* SyncButton.swift in Sources */,
 				0AE3144D25F352AA0061150F /* Press.swift in Sources */,
 				0A90EBCF25F41F6000E2F253 /* AddView.swift in Sources */,
