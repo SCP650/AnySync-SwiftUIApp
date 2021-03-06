@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '14.0'
 
 target 'AnySync' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -7,9 +7,13 @@ target 'AnySync' do
 
   # add the Firebase pod for Google Analytics
   pod 'Firebase/Analytics'
-
+  pod 'Firebase/Firestore'
   # Add the pod for Firebase Cloud Messaging
   pod 'Firebase/Messaging'
+
+  # Optionally, include the Swift extensions if you're using Swift.
+  pod 'FirebaseFirestoreSwift'
+
   # add pods for any other desired Firebase products
   # https://firebase.google.com/docs/ios/setup#available-pods
 
