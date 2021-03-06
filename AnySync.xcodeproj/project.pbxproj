@@ -118,6 +118,9 @@
 		6FBBD08425F32528002453F9 /* AnySync */ = {
 			isa = PBXGroup;
 			children = (
+				6FBBD0F025F33082002453F9 /* Models */,
+				6FBBD0EF25F33070002453F9 /* ViewModels */,
+				6FBBD0EC25F33024002453F9 /* Views */,
 				6FBBD08525F32528002453F9 /* AppDelegate.swift */,
 				6FBBD08725F32528002453F9 /* SceneDelegate.swift */,
 				6FBBD08925F32528002453F9 /* ContentView.swift */,
@@ -154,6 +157,43 @@
 				6FBBD0A925F3252B002453F9 /* Info.plist */,
 			);
 			path = AnySyncUITests;
+			sourceTree = "<group>";
+		};
+		6FBBD0EC25F33024002453F9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6FBBD0EE25F33032002453F9 /* AddView */,
+				6FBBD0ED25F3302C002453F9 /* HomeView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6FBBD0ED25F3302C002453F9 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		6FBBD0EE25F33032002453F9 /* AddView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddView;
+			sourceTree = "<group>";
+		};
+		6FBBD0EF25F33070002453F9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6FBBD0F025F33082002453F9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		768B64163351C0DCB1C13FF7 /* Pods */ = {
