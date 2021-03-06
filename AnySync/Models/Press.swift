@@ -9,8 +9,8 @@ import UIKit
 
 // This is the payload for button pressed
 
-struct Press {
-    let id = "w19ic"
-    let uuid = UIDevice.current.identifierForVendor?.uuidString
-    let timestamp = Date()
+struct Press: Identifiable, Codable {
+    var id = "w19ic"
+    var uuid = UIDevice.current.identifierForVendor?.uuidString
+    var timestamp = Date()
 }
