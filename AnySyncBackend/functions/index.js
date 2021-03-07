@@ -14,6 +14,7 @@ exports.requestMatch = functions.firestore
       return;
     }
     const activityId = context.params.activityId;
+    functions.logger.log(activityId);
     const pressesData = await admin
       .firestore()
       .collection("buttons/" + activityId + "/presses")
@@ -76,7 +77,6 @@ exports.requestMatch = functions.firestore
           (numMatches > 1
             ? numMatches + " people want"
             : numMatches + " person wants") +
-          " to have " +
           activityName +
           " with you.",
       },
