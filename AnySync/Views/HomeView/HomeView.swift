@@ -11,10 +11,6 @@ struct HomeView: View {
     @ObservedObject var viewModel = HomeViewModel()
     @State var isShowingAddView = false
     
-    // TODO: replace data source with actual data source
-//    let data = [SyncButton(id: "scasc", name: "Sex", timeInterval: 3600.0), SyncButton(id: "a", name: "Play COD", timeInterval: 1800.0),
-//        SyncButton(id: "c", name: "Dinner Date", timeInterval: 1800.0)]
-    
     var body: some View {
         NavigationView {
             List(viewModel.buttons, id: \.id) { rowButton in
@@ -32,7 +28,10 @@ struct HomeView: View {
             }
                 .buttonStyle(PlainButtonStyle())
         }.sheet( isPresented: $isShowingAddView, content: {
-            AddView(addViewModel: AddViewModel(), showSheetView: $isShowingAddView)
+            AddView(addViewModel: AddViewModel(homeVM: self.viewModel), showSheetView: $isShowingAddView)
+        })
+        .onAppear(perform: {
+            viewModel.loadButtonsFromDefaults()
         })
             
     }

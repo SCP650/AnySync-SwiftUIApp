@@ -10,6 +10,12 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class AddViewModel: ObservableObject {
+    let homeVM: HomeViewModel
+    let defaults = UserDefaults.standard
+    
+    init(homeVM: HomeViewModel) {
+        self.homeVM = homeVM
+    }
     
     // MARK: Form element states
     @Published var buttonName = ""
@@ -27,16 +33,22 @@ class AddViewModel: ObservableObject {
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
+                // Lets crash yay!
+                fatalError()
             } else {
                 print("Document added with ID: \(ref!.documentID)")
+                let theButton =  SyncButton(id: ref!.documentID, name: self.buttonName, timeInterval: self.discoverableTime)
+                self.homeVM.subscribeToButton(button: theButton)
+                UIPasteboard.general.string = "anysync://\(ref!.documentID)"
             }
         }
         
         
-        // TODO: Three things
-        // 1. create a new button document under firebase
-        // 2. create a new subscription in new button document created
-        // 3. get button document and call the persistence function in HomeVM to save to local
         
+        // TODO: Three things
+        // 1. create a new button document under firebase - OK
+        // 2. create a new subscription in new button document created 
+        // 3. get button document and call the persistence function in HomeVM to save to local - OK
+
     }
 }

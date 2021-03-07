@@ -45,6 +45,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.registerForRemoteNotifications()
         // Override point for customization after application launch.
         // [END register_for_notifications]
+        if UserDefaults.standard.string(forKey: "notificationToken") == nil {
+            Messaging.messaging().token { token, error in
+                if let error = error {
+                  print("Error fetching FCM registration token: \(error)")
+                } else if let token = token {
+                    UserDefaults.standard.setValue(token, forKey: "notificationToken")
+                }
+              }
+        }
+        
         return true
     }
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {

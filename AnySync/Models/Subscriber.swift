@@ -6,9 +6,9 @@
 //
 
 import UIKit
+import FirebaseMessaging
 
-struct Subscriber: Identifiable, Codable {
-    var id = UIDevice.current.identifierForVendor?.uuidString
+struct Subscriber: Codable {
     var uuid = UIDevice.current.identifierForVendor?.uuidString
     
     // TODO: add notification token here
