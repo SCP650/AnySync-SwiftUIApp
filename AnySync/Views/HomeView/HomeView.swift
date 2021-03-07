@@ -29,10 +29,16 @@ struct HomeView: View {
                         .buttonStyle(PlainButtonStyle())
                 
             } else {
-                List(viewModel.buttons, id: \.id) { rowButton in
+                List{
+                    ForEach(viewModel.buttons, id: \.id){ rowButton in
                         HomeRowView(syncButton: rowButton, vm: viewModel)
                         .padding(.vertical)
+                      
+                    }  .onDelete { (index) in
+                       
+                        viewModel.unsubscribeToButton(index)
                     }
+                }
                 .navigationBarTitle("Syncs")
                     .toolbar {
                         Button(action: {

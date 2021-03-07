@@ -19,7 +19,7 @@ class AddViewModel: ObservableObject {
     
     // MARK: Form element states
     @Published var buttonName = ""
-    @Published var discoverableTime = 2600
+    @Published var discoverableTime = 3600
     
     // MARK: New Button
     func createNewButton() {

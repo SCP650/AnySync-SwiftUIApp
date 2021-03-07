@@ -103,4 +103,18 @@ class HomeViewModel: ObservableObject {
             }
         }
     }
+    
+    //delete buttons
+    func unsubscribeToButton(_ button_index : IndexSet){
+        let button = buttons[button_index.first ?? 0]
+        buttons.remove(atOffsets: button_index)
+        
+        db.collection("buttons").document("\(button.id)").collection("subscribers").document("\(subscriber.uuid! as String)").delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
+            }
+        }
+    }
 }
