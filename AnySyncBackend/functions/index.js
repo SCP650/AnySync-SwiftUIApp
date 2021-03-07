@@ -19,11 +19,13 @@ exports.requestMatch = functions.firestore
       .firestore()
       .collection("buttons/" + activityId + "/presses")
       .get();
-    const presses = pressesData.docs.map(elem => elem.data());
+    const presses = pressesData.docs.map(elem => elem);
     if (!presses || presses.length == 0) {
       functions.logger.log("No prior presses");
       return;
     }
+
+    const toDelete = [];
     const fields = await admin
       .firestore()
       .doc("/buttons/" + activityId)
@@ -31,17 +33,21 @@ exports.requestMatch = functions.firestore
     const { time_interval: timeInterval, name: activityName } = fields.data();
 
     const recentWithDups = presses
-      .filter(
-        elem =>
-          timeInterval >= currTime - elem.time_pressed && elem.uuid != currUuid
-      )
-      .map(elem => elem.uuid);
+      .filter(elem => {
+        const { time_pressed: timePressed, uuid } = elem.data();
+        if (currTime - timePressed > timeInterval) {
+          toDelete.push(elem.ref.delete());
+          return false;
+        }
+        return uuid != currUuid;
+      })
+      .map(elem => elem.data().uuid);
     const recent = [...new Set(recentWithDups)]; // remove duplicates
     const numMatches = recent.length;
 
     functions.logger.log("Got " + numMatches + " matches.");
     if (numMatches == 0) {
-      return;
+      return Promise.all(toDelete);
     }
 
     // https://github.com/firebase/functions-samples/blob/master/fcm-notifications/functions/index.js
@@ -58,13 +64,12 @@ exports.requestMatch = functions.firestore
         .get()
     );
     const temp = await Promise.all(matchedPeopleTokens);
-    const tokens = temp.map(elem => elem ? elem.data().token : "");
+    const tokens = temp.map(elem => (elem ? elem.data().token : ""));
 
     // Check if there are any device tokens.
     if (tokens.length == 0) {
-      return functions.logger.log(
-        "There are no notification tokens to send to."
-      );
+      functions.logger.log("There are no notification tokens to send to.");
+      return Promise.all(toDelete);
     }
 
     functions.logger.log("There are ", tokens.length, " tokens to notify.");
@@ -93,4 +98,5 @@ exports.requestMatch = functions.firestore
             " failed."
         )
       );
+    return Promise.all(toDelete);
   });
