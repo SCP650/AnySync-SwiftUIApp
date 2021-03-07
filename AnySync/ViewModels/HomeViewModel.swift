@@ -11,8 +11,9 @@ class HomeViewModel: ObservableObject {
     @State var buttons = [SyncButton]()
 
     // Upstream
-    func sendButtonPush() {
+    func sendButtonPush(_ button_id : String) {
         // Adds a new press record to firebase under "presses"
+        
     }
     
     // Downstream

@@ -34,7 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 
                 let syncButtonID = components.string?.split(separator: "/").dropFirst().first
                 print(syncButtonID)
-                let contentView = ContentView()
+                let contentView = HomeView()
                 // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
                 // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
                 
@@ -47,7 +47,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 }
             } else {
                 
-                let contentView = ContentView()
+                let contentView = HomeView()
         
                 // Use a UIHostingController as window root view controller.
                 if let windowScene = scene as? UIWindowScene {
@@ -59,7 +59,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }
         } else {
             // handle error here
-            let contentView = ContentView()
+            let contentView = HomeView()
     
             // Use a UIHostingController as window root view controller.
             if let windowScene = scene as? UIWindowScene {
@@ -68,6 +68,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 self.window = window
                 window.makeKeyAndVisible()
             }
+
         }
     }
     

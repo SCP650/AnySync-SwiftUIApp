@@ -10,5 +10,5 @@ import Foundation
 struct SyncButton: Identifiable, Codable {
     var id = "ascklasjh1"
     var name = "Sex"
-    var timeInterval = 3600.0
+    var timeInterval = 3600
 }

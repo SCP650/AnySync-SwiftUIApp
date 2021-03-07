@@ -8,27 +8,31 @@
 import SwiftUI
 
 struct AddView: View {
-    @State var name : String = ""
-    @State var time : Int = 2
+
+    @ObservedObject var addViewModel: AddViewModel
+    @Binding var showSheetView: Bool
     
     var body: some View {
         NavigationView{
             Form {
                 Section {
                     Text("What is the event?")
-                    TextField("e.g. Play video games!", text: $name)
+                    TextField("e.g. Play video games!", text: $addViewModel.buttonName)
                     Text("How long are you interested?")
-                    Picker("", selection: $time) {
+                    Picker("", selection: $addViewModel.discoverableTime) {
                  
-                      Text("30 mins").tag(30)
-                      Text("1 h").tag(60)
-                    Text("1.5 h").tag(90)
-                    Text("2 h").tag(120)
+                      Text("30 mins").tag(1800)
+                      Text("1 h").tag(2600)
+                    Text("1.5 h").tag(5400)
+                    Text("2 h").tag(7200)
                     }
               
                     .pickerStyle(SegmentedPickerStyle())
                 }
-                Button(action: { }) {
+                Button(action: {
+                    self.addViewModel.createNewButton()
+                    self.showSheetView = false
+                }) {
                   Text("Create")
                 }
             }.navigationBarTitle("Create Button")
@@ -36,12 +40,5 @@ struct AddView: View {
        
             
         }
-    }
-}
-
-struct AddView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddView()
-            .preferredColorScheme(.dark)
     }
 }
