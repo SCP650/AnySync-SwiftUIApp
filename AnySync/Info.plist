@@ -28,6 +28,16 @@
 				<string>com.googleusercontent.apps.277823184852-pup8i5e0ij6ouuf6bsg814dqks2vddod</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.yukaiyang.anysync</string>
+			<key>CFBundleTypeRole</key>
+			<string>None</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>anysync</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
