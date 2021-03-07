@@ -18,10 +18,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let components = NSURLComponents(url: URLContexts.first!.url, resolvingAgainstBaseURL: true) {
             
             let syncButtonID = components.string?.split(separator: "/").dropFirst().first
-            print(syncButtonID)
-            // need to fireup the home view and add it to the view
-            
-            
+            print(syncButtonID!)
+            let vm = HomeViewModel()
+            vm.loadButtonFromRemote(String(syncButtonID!))
+            // handle error here
+            let contentView = HomeView(viewModel: vm, isShowingAddView: false)
+            // Use a UIHostingController as window root view controller.
+            if let windowScene = scene as? UIWindowScene {
+                let window = UIWindow(windowScene: windowScene)
+                window.rootViewController = UIHostingController(rootView: contentView)
+                self.window = window
+                window.makeKeyAndVisible()
+            }
         }else{
             print("Invalid URL or album path missing")
         }
@@ -33,8 +41,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             if let components = NSURLComponents(url: urlContext.url, resolvingAgainstBaseURL: true) {
                 
                 let syncButtonID = components.string?.split(separator: "/").dropFirst().first
-                print(syncButtonID)
-                let contentView = HomeView()
+                print(syncButtonID!)
+                let vm = HomeViewModel()
+                vm.loadButtonFromRemote(String(syncButtonID!))
+                // handle error here
+                let contentView = HomeView(viewModel: vm, isShowingAddView: false)
                 // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
                 // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
                 
@@ -58,7 +69,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 }
             }
         } else {
-            // handle error here
+
             let contentView = HomeView()
     
             // Use a UIHostingController as window root view controller.

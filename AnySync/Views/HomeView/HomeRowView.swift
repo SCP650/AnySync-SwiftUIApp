@@ -9,10 +9,14 @@ import SwiftUI
 
 struct HomeRowView: View {
     var syncButton: SyncButton
+    var vm: HomeViewModel
+
     var body: some View {
         HStack {
             Spacer()
-            Button(action: {}, label: {
+            Button(action: {
+                vm.sendButtonPush(syncButton.id)
+            }, label: {
                 Text("Sync")
                     .font(.subheadline)
                     .fontWeight(.semibold)
@@ -36,10 +40,10 @@ struct HomeRowView: View {
     }
 }
 
-struct HomeRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeRowView(syncButton: SyncButton(id: "scasc", name: "Sex", timeInterval: 1800))
-            .preferredColorScheme(.dark)
-            .previewLayout(.fixed(width: 400, height: 100))
-    }
-}
+//struct HomeRowView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeRowView(syncButton: SyncButton(id: "scasc", name: "Sex", timeInterval: 1800))
+//            .preferredColorScheme(.dark)
+//            .previewLayout(.fixed(width: 400, height: 100))
+//    }
+//}

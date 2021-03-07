@@ -14,7 +14,7 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             List(viewModel.buttons, id: \.id) { rowButton in
-                   HomeRowView(syncButton: rowButton)
+                    HomeRowView(syncButton: rowButton, vm: viewModel)
                     .padding(.vertical)
                 }
                 .navigationBarTitle("Syncs")

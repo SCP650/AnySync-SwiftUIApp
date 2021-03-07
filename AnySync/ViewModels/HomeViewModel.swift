@@ -18,15 +18,29 @@ class HomeViewModel: ObservableObject {
     // Upstream
     func sendButtonPush(_ buttonID : String) {
         // Adds a new press record to firebase under "presses"
-        
+        if let token = defaults.string(forKey: "notificationToken") {
+            subscriber.deviceNotificationToken = token
+            db.collection("buttons").document("\(buttonID)").collection("presses").addDocument(data: [
+                "time_pressed": Date(),
+                "uuid": subscriber.uuid! as String
+            ], completion: { (err) in
+                if err != nil {
+                    // bao cuo
+                    fatalError()
+                }
+                print("I pressed")
+            })
+        } else {
+            // bao cuo
+            fatalError()
+        }
     }
     
     // Downstream
     func subscribeToButton(button: SyncButton) {
-        // TODO: Three things:
-        // 1. save the button to local defaults - OK
-        // 2. send subscriber object to firebase under "subscriber" - OK
-        // 3. puts a button inside the @State buttons - OK
+        // 1. save the button to local defaults
+        // 2. send subscriber object to firebase under "subscriber"
+        // 3. puts a button inside the @State buttons
     
         // talk to firebase
         
@@ -76,4 +90,17 @@ class HomeViewModel: ObservableObject {
         self.loadButtonsFromDefaults()
     }
     
+    func loadButtonFromRemote(_ buttonID: String) {
+        db.collection("buttons").document("\(buttonID)").getDocument { (doc, err) in
+            if err != nil {
+                // bao cuo
+                fatalError()
+            } else {
+                let name = doc?.get("name") as! String
+                let timeInterval = doc?.get("time_interval") as! Int
+                let newButton = SyncButton(id: buttonID, name: name, timeInterval: timeInterval)
+                self.subscribeToButton(button: newButton)
+            }
+        }
+    }
 }

@@ -30,7 +30,7 @@ struct AddView: View {
                     Picker("", selection: $addViewModel.discoverableTime) {
                  
                       Text("30 mins").tag(1800)
-                      Text("1 h").tag(2600)
+                      Text("1 h").tag(3600)
                     Text("1.5 h").tag(5400)
                     Text("2 h").tag(7200)
                     }
