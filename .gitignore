@@ -160,3 +160,6 @@ node_modules/
 .eslintrc.js
 AnySync/.DS_Store
 .DS_Store
+
+# Local Netlify folder
+.netlify
