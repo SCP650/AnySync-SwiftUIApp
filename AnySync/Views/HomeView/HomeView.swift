@@ -13,20 +13,40 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            List(viewModel.buttons, id: \.id) { rowButton in
-                    HomeRowView(syncButton: rowButton, vm: viewModel)
-                    .padding(.vertical)
-                }
+            
+            if viewModel.buttons.count < 1 {
+                Text("You currently have no syncs.")
+                    .font(.headline )
+                    .navigationBarTitle("Syncs")
+                        .toolbar {
+                            Button(action: {
+                                self.isShowingAddView.toggle()
+                            }, label: {
+                                Image(systemName: "plus.circle.fill")
+                                    .font(Font.title.weight(.semibold))
+                            })
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                
+            } else {
+                List(viewModel.buttons, id: \.id) { rowButton in
+                        HomeRowView(syncButton: rowButton, vm: viewModel)
+                        .padding(.vertical)
+                    }
                 .navigationBarTitle("Syncs")
-            .toolbar {
-                Button(action: {
-                    self.isShowingAddView.toggle()
-                }, label: {
-                    Image(systemName: "plus")
-                        .font(Font.title.weight(.semibold))
-                })
+                    .toolbar {
+                        Button(action: {
+                            self.isShowingAddView.toggle()
+                        }, label: {
+                            Image(systemName: "plus.circle.fill")
+                                .font(Font.title.weight(.semibold))
+                        })
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    
             }
-                .buttonStyle(PlainButtonStyle())
+            
+            
         }.sheet( isPresented: $isShowingAddView, content: {
             AddView(addViewModel: AddViewModel(homeVM: self.viewModel), showSheetView: $isShowingAddView)
         })
