@@ -29,10 +29,10 @@
 			</array>
 		</dict>
 		<dict>
-			<key>CFBundleURLName</key>
-			<string>com.yukaiyang.anysync</string>
 			<key>CFBundleTypeRole</key>
 			<string>None</string>
+			<key>CFBundleURLName</key>
+			<string>com.yukaiyang.anysync</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>anysync</string>
@@ -77,8 +77,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
