@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class AddViewModel {
+class AddViewModel: ObservableObject {
     
     // MARK: Form element states
     @State var buttonName = ""
