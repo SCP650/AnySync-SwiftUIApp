@@ -22,7 +22,7 @@ struct AddView: View {
                 Section {
                     Group{
                     Text("What is the event?")
-                    TextField("e.g. Play video games!", text: $addViewModel.buttonName)
+                    TextField("e.g. Play video games! Kevin/Seb", text: $addViewModel.buttonName)
                         Text("How long are you interested?")}.onTapGesture {
                             self.hideKeyboard()
                             
