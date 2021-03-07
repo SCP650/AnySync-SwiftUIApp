@@ -5,10 +5,10 @@
 //  Created by Atlas on 3/6/21.
 //
 
-import Foundation
+import SwiftUI
 
-class HomeViewModel {
-    @State var buttons: SyncButton = []
+class HomeViewModel: ObservableObject {
+    @State var buttons = [SyncButton]()
 
     // Upstream
     func sendButtonPush() {
