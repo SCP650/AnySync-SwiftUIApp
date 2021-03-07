@@ -10,12 +10,13 @@ import SwiftUI
 struct HomeRowView: View {
     var syncButton: SyncButton
     var vm: HomeViewModel
-
+    @State var simpleAlert = false
     var body: some View {
         HStack {
             Spacer()
             Button(action: {
                 vm.sendButtonPush(syncButton.id)
+                simpleAlert.toggle()
             }, label: {
                 Text("Sync")
                     .font(.subheadline)
@@ -28,6 +29,9 @@ struct HomeRowView: View {
             .padding()
             .background(Color.accentColor)
             .cornerRadius(10)
+            .alert(isPresented: $simpleAlert, content: {
+                Alert(title: Text("Sent!"), message: Text("If any subscribers also press the button, we will notify you!"))
+        })
             Spacer()
             VStack(alignment: .leading){
                 Text(syncButton.name)
