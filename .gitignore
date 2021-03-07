@@ -158,3 +158,5 @@ node_modules/
 .env
 
 .eslintrc.js
+AnySync/.DS_Store
+.DS_Store
