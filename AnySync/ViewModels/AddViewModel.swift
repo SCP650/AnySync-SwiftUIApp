@@ -22,7 +22,7 @@ class AddViewModel: ObservableObject {
     @Published var discoverableTime = 2600
     
     // MARK: New Button
-    func createNewButton() {
+    func createNewButton(completion: @escaping (String) -> Void, onFailure: @escaping (String) -> Void) {
         
         let db = Firestore.firestore()
         // Add a new document with a generated ID
@@ -34,12 +34,13 @@ class AddViewModel: ObservableObject {
             if let err = err {
                 print("Error adding document: \(err)")
                 // Lets crash yay!
-                fatalError()
+                onFailure("done")
             } else {
                 print("Document added with ID: \(ref!.documentID)")
                 let theButton =  SyncButton(id: ref!.documentID, name: self.buttonName, timeInterval: self.discoverableTime)
                 self.homeVM.subscribeToButton(button: theButton)
                 UIPasteboard.general.string = "anysync://\(ref!.documentID)"
+                completion(ref!.documentID)
             }
         }
         
