@@ -33,8 +33,7 @@ exports.requestMatch = functions.firestore
     const recentWithDups = presses
       .filter(
         elem =>
-          timeInterval >= currTime - elem.time_pressed &&
-          elem.uuid != currUuid
+          timeInterval >= currTime - elem.time_pressed && elem.uuid != currUuid
       )
       .map(elem => elem.uuid);
     const recent = [...new Set(recentWithDups)]; // remove duplicates
@@ -59,7 +58,7 @@ exports.requestMatch = functions.firestore
         .get()
     );
     const temp = await Promise.all(matchedPeopleTokens);
-    const tokens = temp.map(elem => elem.data().token);
+    const tokens = temp.map(elem => elem ? elem.data().token : "");
 
     // Check if there are any device tokens.
     if (tokens.length == 0) {
@@ -75,8 +74,8 @@ exports.requestMatch = functions.firestore
         title: "You have a match!",
         body:
           (numMatches > 1
-            ? numMatches + " people want"
-            : numMatches + " person wants") +
+            ? numMatches + " people want "
+            : numMatches + " person wants ") +
           activityName +
           " with you.",
       },
