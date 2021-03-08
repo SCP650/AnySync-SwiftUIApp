@@ -17,7 +17,7 @@ struct AddView: View {
     }
     
     func actionSheet(_ docID: String) {
-        let av = UIActivityViewController(activityItems: ["Come join my AnySync! anysync://\(docID)"], applicationActivities: nil)
+        let av = UIActivityViewController(activityItems: ["Come join my AnySync! anysync.tech/\(docID)"], applicationActivities: nil)
         UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true, completion: {
             self.showSheetView = false
         })
