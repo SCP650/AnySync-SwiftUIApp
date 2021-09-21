@@ -1,5 +1,18 @@
 # AnySync-SwiftUIApp
-A Project for TartanHack 2021
+Have you ever wanted to do something with friends, but feared that your friends may turn you down? Even if your friends said yes, have you ever worried that they might have been pressured to say yes? This situation can happen when inviting friends to play video games or even in a couples' sex life. Our app achieves true consent where both parties spontaneously say yes, but at different times.
+
+How does it work?
+- Create an activity and share it with your friends
+- Tap ”Sync” if you are in the mood
+- If ONLY you tap, your friends would never know
+- But if your friends are also in the mood, they will also tap “Sync” on their phones
+- Then both of you will be notified!
+
+Using our app, one party won't feel discouraged if another party refuses. Because if one taps the "Sync" button, the other party won't know it unless the other party also taps the button within the specified time-frame. You can even create as many syncs as you like for different purposes: “Friday Happy Hours”, “Eat out tonight”, etc!
+
+Built with Swift, Google Firebase, and ReactJS.
+Developed in CMU TartanHack 2021 under 40 hours
+App Developed by Karl Xiao, Kevin Wang, and Sebastian Yang
 
 **Privacy Policy**
 
