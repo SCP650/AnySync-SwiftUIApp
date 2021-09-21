@@ -1,5 +1,5 @@
 # AnySync-SwiftUIApp
-Have you ever wanted to do something with friends, but feared that your friends may turn you down? Even if your friends said yes, have you ever worried that they might have been pressured to say yes? This situation can happen when inviting friends to play video games or even in a couples' sex life. Our app achieves true consent where both parties spontaneously say yes, but at different times.
+Have you ever wanted to do something with friends, but feared that your friends may turn you down? Even if your friends said yes, have you ever worried that they might have been pressured to say yes? This situation can happen when inviting friends to play video games or even in a couples' sex life. Our app achieves true consent where both parties spontaneously say yes, but at different times. Download on App Store now: https://apps.apple.com/us/app/anysync/id1556964175
 
 How does it work?
 - Create an activity and share it with your friends
